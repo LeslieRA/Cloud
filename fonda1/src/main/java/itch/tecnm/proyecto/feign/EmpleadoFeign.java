@@ -1,0 +1,14 @@
+package itch.tecnm.proyecto.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import itch.tecnm.proyecto.dto.EmpleadoDto; // El DTO placeholder en fonda1
+
+@FeignClient(name = "reservaciones-service-empleado", url = "http://localhost:7076/api/empleado")
+public interface EmpleadoFeign {
+	@GetMapping("/{id}")
+    ResponseEntity<EmpleadoDto> getEmpleadoById(@PathVariable("id") Integer empleadoId); // 2. Cambia
+}
