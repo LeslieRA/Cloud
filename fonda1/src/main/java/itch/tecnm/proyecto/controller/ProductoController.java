@@ -22,7 +22,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RestController
 // Es mejor especificar tu puerto de React en lugar de "*"
-@CrossOrigin(origins = "http://localhost:3000") 
+@CrossOrigin("*") 
 @RequestMapping("/api/producto")
 public class ProductoController {
 	//Inyección de dependencia
